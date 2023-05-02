@@ -1,0 +1,62 @@
+.categories-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .categories-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .categories-btn:hover {
+    background-color: #0062cc;
+  }
+
+  .card-text{
+    color: #fff;
+  }
+  
+  .categories-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    z-index: 1;
+    background-color: #0062cc;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    padding: 10px;
+    width: 300px;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .categories-menu .group {
+    margin-bottom: 10px;
+  }
+  
+  .categories-menu .group-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .categories-menu .genre {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .categories-menu .genre:hover {
+    background-color: #000;
+  }
+  

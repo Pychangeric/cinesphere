@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './Categories.css';
 
 const Categories = () => {
   const [movies, setMovies] = useState([]);
@@ -49,11 +50,12 @@ const Categories = () => {
         ))}
       </div>
       <div className="row">
+    
         {filteredMovies.map((movie, index) => (
           <div key={index} className="col-md-3">
             <div className="card">
-              <div className="card-body">
-                <h5 className="card-title">{movie.title}</h5>
+            <div className="card-body">
+                <h1 className="card-title">{movie.title}</h1>
                 <p className="card-text">{movie.description}</p>
                 <img src={movie.image} alt={movie.title} />
               </div>
@@ -61,6 +63,7 @@ const Categories = () => {
           </div>
         ))}
       </div>
+    
     </div>
   );
 };

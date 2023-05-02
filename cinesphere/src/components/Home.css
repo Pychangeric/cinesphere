@@ -1,5 +1,6 @@
 .card-container {
     display: grid;
+    background-color: black;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 20px;
     border-radius: 5px;
