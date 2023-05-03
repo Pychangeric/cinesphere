@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './Add.css';
+import './Add.css'
 
 const Add = ({ history }) => {
   const [title, setTitle] = useState('');
@@ -13,14 +13,7 @@ const Add = ({ history }) => {
     event.preventDefault();
     const newMovie = { title, genre, description, image, trailer };
     try {
-
-      const response = await axios.get(`http://localhost:3000/movies?genre=${genre}`);
-      const movies = response.data;
-
-    
-      const updatedMovies = [...movies, newMovie];
-      await axios.put(`http://localhost:3000/movies?genre=${genre}`, updatedMovies);
-
+      await axios.post('http://localhost:3000/movies', newMovie);
       history.push('/');
     } catch (error) {
       console.error(error);
