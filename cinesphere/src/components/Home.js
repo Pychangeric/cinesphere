@@ -8,6 +8,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchMovies = async () => {
+
       const response = await axios.get('http://localhost:3000/movies');
       setMovies(response.data);
     };
@@ -17,6 +18,7 @@ const Home = () => {
 
   const groupMoviesByGenre = (movies) => {
     const groupedMovies = {};
+
     movies.forEach(movie => {
       const genre = movie.genre;
       if (!groupedMovies[genre]) {
@@ -24,6 +26,7 @@ const Home = () => {
       }
       groupedMovies[genre].push(movie);
     });
+    
     return groupedMovies;
   }
 
@@ -52,6 +55,7 @@ const Home = () => {
   };
 
   const groupedMovies = groupMoviesByGenre(movies);
+
   const renderedMoviesByGenre = renderMoviesByGenre(groupedMovies);
 
   return (
