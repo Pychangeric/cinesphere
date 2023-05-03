@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Home.css';
 
-
 const Home = () => {
   const [movies, setMovies] = useState([]);
 
@@ -15,19 +14,43 @@ const Home = () => {
     fetchMovies();
   }, []);
 
+  const groupMoviesByGenre = (movies) => {
+    const groupedMovies = {};
+    movies.forEach(movie => {
+      const genre = movie.genre;
+      if (!groupedMovies[genre]) {
+        groupedMovies[genre] = [];
+      }
+      groupedMovies[genre].push(movie);
+    });
+    return groupedMovies;
+  }
+
+  const renderMoviesByGenre = (groupedMovies) => {
+    return Object.keys(groupedMovies).map((genre, index) => (
+      <div key={index} className="genre-container">
+        <h1 className="genre-title">{genre}</h1>
+        <div className="card-container">
+          {groupedMovies[genre].map((movie, index) => (
+            <div key={index} className="card">
+              <div className="card-body">
+                <h2 className="card-title">{movie.title}</h2>
+                <img src={movie.image} alt={movie.title} />
+                <p className="card-text">{movie.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    ));
+  };
+
+  const groupedMovies = groupMoviesByGenre(movies);
+  const renderedMoviesByGenre = renderMoviesByGenre(groupedMovies);
+
   return (
     <div className="container">
-      <div className="card-container">
-        {movies.map((movie, index) => (
-          <div key={index} className="card">
-            <div className={index === 0 ? "card-body big-card" : "card-body"}>
-              <h1 className="card-title">{movie.title}</h1>
-              <img src={movie.image} alt={movie.title} />
-              <h1 className="card-text">{movie.description}</h1>
-            </div>
-          </div>
-        ))}
-      </div>
+      {renderedMoviesByGenre}
     </div>
   );
 };
