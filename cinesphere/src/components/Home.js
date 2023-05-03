@@ -43,9 +43,11 @@ const Home = () => {
             <div key={index} className="card">
               <div className="card-body">
                 <h2 className="card-title">{movie.title}</h2>
+                <button onClick={() => handlePlayTrailer(movie.trailer)}>Play Trailer</button>
                 <img src={movie.image} alt={movie.title} />
                 <p className="card-text">{movie.description}</p>
-                <button onClick={() => handlePlayTrailer(movie.trailer)}>Play Trailer</button>
+                <p className="card-text">{movie.year}</p>
+                
               </div>
             </div>
           ))}
