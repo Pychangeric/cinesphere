@@ -2,10 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
 import Add from './components/Add';
-import Sidebar from './components/Sidebar';
-import Downloads from './components/Downloads';
 import Navbar from './Navbar';
-import Delete from './components/Delete';
 import Menu from './components/Menu';
 
 

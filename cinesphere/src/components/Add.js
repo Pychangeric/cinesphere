@@ -21,30 +21,25 @@ const Add = ({ history }) => {
   };
 
   return (
-    <div>
+    <div className="card">
       <h1>Add Movie</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Title:</label>
-          <input type="text" value={title} onChange={(event) => setTitle(event.target.value)} />
-        </div>
-        <div>
-          <label>Genre:</label>
-          <input type="text" value={genre} onChange={(event) => setGenre(event.target.value)} />
-        </div>
-        <div>
-          <label>Description:</label>
-          <textarea value={description} onChange={(event) => setDescription(event.target.value)} />
-        </div>
-        <div>
-          <label>Image URL:</label>
-          <input type="text" value={image} onChange={(event) => setImage(event.target.value)} />
-        </div>
-        <div>
-          <label>Trailer URL:</label>
-          <input type="text" value={trailer} onChange={(event) => setTrailer(event.target.value)} />
-        </div>
-        <button type="submit">Add</button>
+      <form onSubmit={handleSubmit} className="add-form">
+        <label className="label">Title:</label>
+        <input type="text" value={title} onChange={(event) => setTitle(event.target.value)} className="input" />
+
+        <label className="label">Genre:</label>
+        <input type="text" value={genre} onChange={(event) => setGenre(event.target.value)} className="input" />
+
+        <label className="label">Description:</label>
+        <textarea value={description} onChange={(event) => setDescription(event.target.value)} className="input" />
+
+        <label className="label">Image URL:</label>
+        <input type="text" value={image} onChange={(event) => setImage(event.target.value)} className="input" />
+
+        <label className="label">Trailer URL:</label>
+        <input type="text" value={trailer} onChange={(event) => setTrailer(event.target.value)} className="input" />
+
+        <button type="submit" className="btn">Add</button>
       </form>
     </div>
   );

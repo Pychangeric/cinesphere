@@ -67,7 +67,6 @@ const Home = () => {
                 <h2 className="card-title">{movie.title}</h2>
                 <img src={movie.image} alt={movie.title} />
                 <p className="card-text">{movie.description}</p>
-                <p className="card-text">{movie.year}</p>
                 <button
                   className={`btn-like ${movie.liked ? 'liked' : ''}`}
                   onClick={() => handleLike(movie)}>
