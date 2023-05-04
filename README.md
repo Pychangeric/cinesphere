@@ -60,6 +60,7 @@ Or you can access the web application directly via this [LINK.](link.com/)
 *****
 ## Contact Information
 * Email : melchizedek.maranga@gmail.com
+* Email : pychangeeric@gmail.com
 *****
 ## [License](LICENSE)
 MIT License
