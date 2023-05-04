@@ -8,13 +8,11 @@ import Downloads from './components/Downloads';
 
 function App() {
   return (
-      
     <div className="App"
       <Add/>
       <Home/>
       <Sidebar/>
       <Add/>
-
       <Home/>
       <Downloads/>
      
