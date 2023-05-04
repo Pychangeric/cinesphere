@@ -1,0 +1,9 @@
+.sidebar {
+    background-color: var(--black);
+    padding: 0.75rem;
+  }
+  
+  .sidebar nav {
+    position: relative;
+  }
+  
