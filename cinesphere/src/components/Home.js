@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Home.css';
 
-
 const Home = () => {
   const [movies, setMovies] = useState([]);
 
@@ -26,6 +25,8 @@ const Home = () => {
       }
       groupedMovies[genre].push(movie);
     });
+    return groupedMovies;
+  }
     
     return groupedMovies;
   }
@@ -33,7 +34,6 @@ const Home = () => {
   const handlePlayTrailer = (trailerUrl) => {
     window.open(trailerUrl, '_blank');
   };
-
   const renderMoviesByGenre = (groupedMovies) => {
     return Object.keys(groupedMovies).map((genre, index) => (
       <div key={index} className="genre-container">
@@ -43,9 +43,11 @@ const Home = () => {
             <div key={index} className="card">
               <div className="card-body">
                 <h2 className="card-title">{movie.title}</h2>
+                <button onClick={() => handlePlayTrailer(movie.trailer)}>Play Trailer</button>
                 <img src={movie.image} alt={movie.title} />
                 <p className="card-text">{movie.description}</p>
-                <button onClick={() => handlePlayTrailer(movie.trailer)}>Play Trailer</button>
+                <p className="card-text">{movie.year}</p>
+                
               </div>
             </div>
           ))}
@@ -55,7 +57,6 @@ const Home = () => {
   };
 
   const groupedMovies = groupMoviesByGenre(movies);
-
   const renderedMoviesByGenre = renderMoviesByGenre(groupedMovies);
 
   return (
