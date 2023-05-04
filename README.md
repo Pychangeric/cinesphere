@@ -13,8 +13,10 @@ breadth of content such as music and much more!
 ******
 
 ## SCREENSHOTS
-- link 1
-- link 2
+- https://github.com/Pychangeric/CineSphere/issues/14#issue-1696686234
+- https://github.com/Pychangeric/CineSphere/issues/15#issue-1696698363
+- https://github.com/Pychangeric/CineSphere/issues/16#issue-1696700410
+- https://github.com/Pychangeric/CineSphere/issues/17#issue-1696702132
 
 
 ********
