@@ -7,7 +7,6 @@ const Home = () => {
 
   useEffect(() => {
     const fetchMovies = async () => {
-
       const response = await axios.get('http://localhost:3000/movies');
       setMovies(response.data);
     };
@@ -17,7 +16,6 @@ const Home = () => {
 
   const groupMoviesByGenre = (movies) => {
     const groupedMovies = {};
-
     movies.forEach(movie => {
       const genre = movie.genre;
       if (!groupedMovies[genre]) {
@@ -27,13 +25,7 @@ const Home = () => {
     });
     return groupedMovies;
   }
-    
-    return groupedMovies;
-  }
 
-  const handlePlayTrailer = (trailerUrl) => {
-    window.open(trailerUrl, '_blank');
-  };
   const renderMoviesByGenre = (groupedMovies) => {
     return Object.keys(groupedMovies).map((genre, index) => (
       <div key={index} className="genre-container">
@@ -43,11 +35,8 @@ const Home = () => {
             <div key={index} className="card">
               <div className="card-body">
                 <h2 className="card-title">{movie.title}</h2>
-                <button onClick={() => handlePlayTrailer(movie.trailer)}>Play Trailer</button>
                 <img src={movie.image} alt={movie.title} />
                 <p className="card-text">{movie.description}</p>
-                <p className="card-text">{movie.year}</p>
-                
               </div>
             </div>
           ))}
