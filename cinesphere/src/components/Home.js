@@ -64,6 +64,6 @@ const Home = () => {
       {renderedMoviesByGenre}
     </div>
   );
-};
+
 
 export default Home;
