@@ -15,13 +15,12 @@ function App() {
     <div className="App">
     
      <Navbar />
-    
-      <Add/>
       <Home/>
       <Sidebar/>
       <Add/>
       <Home/>
       <Downloads/>
+      <Add/>
      
     </div>
   );

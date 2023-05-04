@@ -1,4 +1,3 @@
-// Downloads.js
 import React from 'react';
 import './Downloads.css';
 
