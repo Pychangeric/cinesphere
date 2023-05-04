@@ -31,10 +31,12 @@ function Navbar() {
       {movie ? (
         <div className="movie">
           <h2>{movie.title}</h2>
+          <p>{movie.trailer}</p>
           <img src={movie.image} alt={movie.title} />
+         
         </div>
       ) : (
-        <p>No movie found.</p>
+        <p></p>
       )}
     </nav>
   );

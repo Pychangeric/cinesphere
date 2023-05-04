@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Home.css';
+import Favourite from './Favourite';
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
+  const [favourites, setFavourites] = useState([]);
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -30,6 +32,29 @@ const Home = () => {
     window.open(trailerUrl, '_blank');
   };
 
+  const handleLike = (movie) => {
+    const updatedMovies = movies.map(m => {
+      if (m.id === movie.id) {
+        return { ...m, liked: !m.liked };
+      } else {
+        return m;
+      }
+    });
+    setMovies(updatedMovies);
+  };
+
+  const handleFavourite = (movie) => {
+    setFavourites([...favourites, movie]);
+  };
+
+  const handleDelete = async (movie) => {
+    try {
+      await axios.delete(`http://localhost:3000/movies/${movie.id}`);
+      setMovies(movies.filter(m => m.id !== movie.id));
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const renderMoviesByGenre = (groupedMovies) => {
     return Object.keys(groupedMovies).map((genre, index) => (
@@ -42,9 +67,27 @@ const Home = () => {
                 <h2 className="card-title">{movie.title}</h2>
                 <img src={movie.image} alt={movie.title} />
                 <p className="card-text">{movie.description}</p>
-
                 <p className="card-text">{movie.year}</p>
-
+                <button
+                  className={`btn-like ${movie.liked ? 'liked' : ''}`}
+                  onClick={() => handleLike(movie)}>
+                  Like
+                </button>
+                <button
+                  className="btn-favourite"
+                  onClick={() => handleFavourite(movie)}>
+                  Favourite
+                </button>
+                <button
+                  className="btn-delete"
+                  onClick={() => handleDelete(movie)}>
+                  Delete
+                </button>
+                <button
+                  className="btn-play-trailer"
+                  onClick={() => handlePlayTrailer(movie.trailer)}>
+                  Play Trailer
+                </button>
               </div>
             </div>
           ))}
@@ -59,6 +102,7 @@ const Home = () => {
   return (
     <div className="container">
       {renderedMoviesByGenre}
+      <Favourite favourites={favourites} />
     </div>
   );
 };
