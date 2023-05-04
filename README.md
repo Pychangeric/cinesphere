@@ -38,8 +38,7 @@ breadth of content such as music and much more!
 >  $ pip install -r requirements.txt
 To install all requirements
 
-> $ python3 manage.py runserver
-Then run server with the above command
+
 *****
 ## Live Link
 Or you can access the web application directly via this [LINK.](link.com/)
@@ -54,7 +53,7 @@ Or you can access the web application directly via this [LINK.](link.com/)
 - web-vitals
 *****
 ## Technologies Used
-1. React
+1. React.js
 2. CSS
 3. HTML
 *****
