@@ -37,9 +37,8 @@ breadth of content such as music and much more!
 * Open the folder location on terminal and use the following command to run app:
 
 ## How To Run It
-npm start
-npx json-server --watch db.json
-
+>  $ pip install -r requirements.txt
+To install all requirements
 
 
 *****
