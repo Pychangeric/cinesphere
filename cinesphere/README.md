@@ -43,7 +43,7 @@ To install all requirements
 
 *****
 ## Live Link
-Or you can access the web application directly via this [LINK.](link.com/)
+Or you can access the web application directly via this [https://cinesphere-git-main-pychangeric.vercel.app/]
 *****
 ## Dependencies
 - axios
